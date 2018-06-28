@@ -1,5 +1,3 @@
-import string
-
 
 def reindent(s, numSpaces, prefix):
     _prefix = "\n"
