@@ -6,4 +6,4 @@ try:
     dist_name = 'pyjuhelpers'
     __version__ = get_distribution(dist_name).version
 except DistributionNotFound:
-    __version__ = '0.1'
+    __version__ = '0.2'
