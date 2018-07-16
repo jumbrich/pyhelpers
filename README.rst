@@ -3,13 +3,13 @@ pyhelpers
 =========
 
 
-Add a short description here!
+Some tiny helper classes for daily routines
 
 
 Description
 ===========
 
-A longer description of your project goes here...
+Personal collection of python helper classes (e.g. timer with context, string (list) formats, logging configs, base config class
 
 
 Note
