@@ -90,7 +90,7 @@ class Timer(object):
             csvw.writerow(row)
         if filename:
             with open(filename,'w') as f:
-                f.write(data)
+                f.write(data.getvalue())
         data.seek(0)
         return data.read()
 
