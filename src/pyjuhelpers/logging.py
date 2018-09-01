@@ -4,6 +4,25 @@ import logging.config
 
 from pyjuhelpers.timer import Timer
 
+import logging
+logging.STATUS_LEVEL_NO = 25
+
+import structlog
+structlog.stdlib.STATUS =logging.STATUS_LEVEL_NO
+structlog.stdlib._NAME_TO_LEVEL['status'] = logging.STATUS_LEVEL_NO
+structlog.stdlib._LEVEL_TO_NAME[ logging.STATUS_LEVEL_NO] = 'status'
+
+logging.addLevelName(logging.STATUS_LEVEL_NO, "STATUS")
+
+def status(self, message, *args, **kws):
+    # Yes, logger takes its '*args' as 'args'.
+    if self.isEnabledFor(logging.STATUS_LEVEL_NO):
+        self._log(logging.STATUS_LEVEL_NO, message, args, **kws)
+logging.Logger.status = status
+
+
+
+
 logging.getLogger(__name__).addHandler(logging.NullHandler())
 
 
